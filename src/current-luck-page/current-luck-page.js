@@ -1,6 +1,8 @@
-import { last } from "lodash";
+import { isNull, last } from "lodash";
 import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
+import { useIsNewSession } from "../use-is-new-session";
+import * as asyncStorage from "../async-storage";
 import { LuckBar } from "./luck-bar";
 import { MAX_LUCK_SCORE } from "./max-luck-score";
 import { initialLuckScore } from "./utils/initial-luck-score";
@@ -10,6 +12,8 @@ import { luckSegmentColours } from "./utils/luck-segment-colours";
 
 export const CurrentLuckPage = () => {
   const luckScore = useLuckScore();
+
+  if (isNull(luckScore)) return null;
 
   return (
     <View
@@ -48,7 +52,20 @@ export const CurrentLuckPage = () => {
 };
 
 const useLuckScore = () => {
-  const [luckScore, setLuckScore] = useState(initialLuckScore());
+  const { isNewSession, hasLoadedSession } = useIsNewSession();
+  const [luckScore, setLuckScore] = useState(null);
+
+  useEffect(() => {
+    let hasUnmounted = false;
+    if (hasLoadedSession) {
+      asyncStorage.luckScore.read().then((recordLuckScore) => {
+        if (!hasUnmounted)
+          setLuckScore(isNewSession ? initialLuckScore() : recordLuckScore);
+      });
+    }
+
+    return () => (hasUnmounted = true);
+  }, [isNewSession, hasLoadedSession]);
 
   useEffect(() => {
     const interval = setInterval(
