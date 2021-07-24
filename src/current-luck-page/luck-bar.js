@@ -1,7 +1,7 @@
 import { last } from "lodash";
 import React, { useEffect, useMemo, useRef } from "react";
 import { Animated, View } from "react-native";
-import { MAX_LUCK_SCORE } from "./max-luck-score";
+import { MAX_LUCK_SCORE } from "../max-luck-score";
 import { luckSegmentColours } from "./utils/luck-segment-colours";
 
 const TEMPLATE_ARRAY = new Array(MAX_LUCK_SCORE).fill(null);

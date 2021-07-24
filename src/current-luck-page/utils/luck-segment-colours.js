@@ -1,6 +1,6 @@
 import { last } from "lodash";
 import { colourObjectToString, endColour, startColour } from "./colour-objects";
-import { MAX_LUCK_SCORE } from "../max-luck-score";
+import { MAX_LUCK_SCORE } from "../../max-luck-score";
 
 const getLuckSegmentColours = () => {
   const redIncrement = colourIncrementValue("red");

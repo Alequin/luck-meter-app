@@ -1,4 +1,4 @@
-import { MAX_LUCK_SCORE } from "../max-luck-score";
+import { MAX_LUCK_SCORE } from "../../max-luck-score";
 
 export const luckDescription = (luckScore) => {
   const scorePercentage = luckScore / MAX_LUCK_SCORE;

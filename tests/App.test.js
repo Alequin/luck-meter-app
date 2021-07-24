@@ -10,7 +10,7 @@ import React from "react";
 import { App } from "../App";
 import { asyncRender } from "../src/test-utils";
 import { initialLuckScore } from "../src/current-luck-page/utils/initial-luck-score";
-import { MAX_LUCK_SCORE } from "../src/current-luck-page/max-luck-score";
+import { MAX_LUCK_SCORE } from "../src/max-luck-score";
 import * as asyncStorage from "../src/async-storage";
 
 describe("App", () => {
