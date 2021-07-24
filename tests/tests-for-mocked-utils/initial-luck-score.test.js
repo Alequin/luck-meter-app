@@ -1,5 +1,5 @@
-import { MAX_LUCK_SCORE } from "../../src/current-luck-page/max-luck-score";
-import { initialLuckScore } from "../../src/current-luck-page/utils/initial-luck-score";
+import { MAX_LUCK_SCORE } from "../../src/max-luck-score";
+import { initialLuckScore } from "../../src/utils/initial-luck-score";
 import { times } from "lodash";
 
 describe("Initial Luck Score", () => {

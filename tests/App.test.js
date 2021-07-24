@@ -1,5 +1,5 @@
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
-jest.mock("../src/current-luck-page/utils/initial-luck-score", () => ({
+jest.mock("../src/utils/initial-luck-score", () => ({
   initialLuckScore: jest.fn(),
 }));
 jest.mock("expo-constants", () => ({
@@ -9,7 +9,7 @@ jest.mock("expo-constants", () => ({
 import React from "react";
 import { App } from "../App";
 import { asyncRender } from "../src/test-utils";
-import { initialLuckScore } from "../src/current-luck-page/utils/initial-luck-score";
+import { initialLuckScore } from "../src/utils/initial-luck-score";
 import { MAX_LUCK_SCORE } from "../src/max-luck-score";
 import * as asyncStorage from "../src/async-storage";
 

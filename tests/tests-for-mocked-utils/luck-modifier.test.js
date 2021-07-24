@@ -1,4 +1,4 @@
-import { luckModifier } from "../../src/current-luck-page/utils/luck-modifier";
+import { luckModifier } from "../../src/utils/luck-modifier";
 
 describe("Luck Modifier", () => {
   beforeEach(() => jest.clearAllMocks());
