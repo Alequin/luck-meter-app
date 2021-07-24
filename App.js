@@ -8,17 +8,23 @@ import { CurrentLuckPage } from "./src/current-luck-page/current-luck-page";
 
 const Stack = createStackNavigator();
 
-const App = () => {
+export const App = () => {
   return (
-    <SafeAreaProvider>
+    <>
       <StatusBar />
       <NavigationContainer theme={DarkTheme}>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Root" component={CurrentLuckPage} />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider>
+    </>
   );
 };
 
-export default App;
+const AppWithSafeArea = () => (
+  <SafeAreaProvider>
+    <App />
+  </SafeAreaProvider>
+);
+
+export default AppWithSafeArea;

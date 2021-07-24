@@ -11,4 +11,6 @@ export const endColour = {
 };
 
 export const colourObjectToString = (colour) =>
-  `rgb(${colour.red}, ${colour.green}, ${colour.blue})`;
+  `rgb(${Math.round(colour.red)}, ${Math.round(colour.green)}, ${Math.round(
+    colour.blue
+  )})`;
