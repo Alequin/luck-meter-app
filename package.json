@@ -3,11 +3,11 @@
   "scripts": {
     "refresh-node-modules": "rm -rf node_modules && rm yarn.lock && yarn install",
     "start": "expo start -c",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "test": "jest",
+    "build-android-apk": "expo build:android -t apk",
+    "build-android-bundle": "expo build:android -t app-bundle",
+    "review-bundle": "npx react-native-bundle-visualizer --expo managed"
   },
   "jest": {
     "preset": "jest-expo"
@@ -22,6 +22,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-bundle-visualizer": "^2.2.1",
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0"
   },
