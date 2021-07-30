@@ -1,5 +1,5 @@
 import { googleMobileAdsAppId } from "./secrets.json";
-const version = 1;
+const version = 2;
 
 export default {
   name: "Luck 'o' Meter",
@@ -14,6 +14,7 @@ export default {
   assetBundlePatterns: ["**/*"],
   android: {
     package: "com.just_for_fun.luck_meter",
+    permissions: [], // Use minimum permissions (https://docs.expo.dev/versions/latest/config/app/#permissions)
     versionCode: version,
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-icon.png",
