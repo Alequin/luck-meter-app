@@ -2,7 +2,7 @@ import { googleMobileAdsAppId } from "./secrets.json";
 const version = 1;
 
 export default {
-  name: "Luck Meter",
+  name: "Luck 'o' Meter",
   slug: "luck-o-meter",
   version: `${version}.0.0`,
   orientation: "portrait",
